@@ -1,0 +1,59 @@
+@page {
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  gap: 5mm;
+  grid-template-columns: repeat(2, min-content);
+  justify-content: center;
+  align-content: center;
+}
+
+.plastic-card {
+  /* ~official card size */
+  --card-h: 85.725mm;
+  --card-w: 53.975mm;
+  --plastic-size: 5mm;
+  --paper-padding: 2mm;
+  border-radius: 2.88mm;
+  border: 1px solid #000;
+  display: grid;
+  height: var(--card-h);
+  width: var(--card-w);
+}
+
+.paper-card {
+  align-items: center;
+  border: 1px solid #666;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas: "flag" "txt" "code";
+  justify-items: center;
+  margin: var(--plastic-size);
+  padding: var(--paper-padding);
+}
+
+.flag {
+  height: 1cm;
+}
+
+.txt {
+  color: #007a66;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.qrcode,
+.qrcanvas {
+  grid-area: code;
+  width: 100%;
+}
